@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-xv4_=s-r2%o-0f#7q!dv7&v@-ppa8-o0$@jzstvxaiv!+9f^j#
 DEBUG = False
 # STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
-ALLOWED_HOSTS = ['yt-down.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['codehold-app.onrender.com', 'localhost', '127.0.0.1']
 
 
 

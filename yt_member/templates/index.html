@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Navbar</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    {% comment %}Header Section{% endcomment %}
+    <header class="header">
+      <div class="main-header">
+        <div class="logo">
+          <i class="fa-solid fa-play"></i>
+          <a href="#" class="text-logo">CodeHold</a>
+        </div>
+        <nav class="nav">
+          <a href="#"><i class="fa-solid fa-briefcase"></i> Portfolio</a>
+          <a href="#"><i class="fa-solid fa-download"></i> Downloads</a>
+          <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> LogIn</a>
+          <a href="#"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+          <a href="#"><i class="fa-solid fa-circle-info"></i> About Us</a>
+        </nav>
+      </div>
+    </header>
+
+    {% comment %}Main Content Section{% endcomment %}
+    <section class="section">
+      <main class="main-content">
+        <h1>Welcome to CodeHold YouTube Video Library</h1>
+        <p>Your one-stop solution for all coding resources.</p>
+
+        {% comment %}playlist section with 3D animated gradient border cards{% endcomment %}
+        <div class="card-container">
+          <div class="card">
+            <div class="thumbnail">
+              <img src="{% static 'thumbnail/thumb1.jpg' %}" alt="3D Card One" />
+            </div>
+            <h2>Video Title</h2>
+            <p>Premium UI design ready for any modern project.</p>
+            <button onclick="openModal()">Download</button>
+          </div>
+
+          <div class="card">
+            <div class="thumbnail">
+              <img src="{% static 'thumbnail/thumb2.jpeg' %}" alt="3D Card Two" />
+            </div>
+            <h2>Video Title</h2>
+            <p>Premium UI design ready for any modern project.</p>
+            <button onclick="openModal()">Download</button>
+          </div>
+
+          <div class="card">
+            <div class="thumbnail">
+              <img src="{% static 'thumbnail/thumb3.jpg' %}" alt="3D Card Three" />
+            </div>
+            <h2>Video Title</h2>
+            <p>Premium UI design ready for any modern project.</p>
+            <button onclick="openModal()">Download</button>
+          </div>
+          <div class="card">
+            <div class="thumbnail">
+              <img src="{% static 'thumbnail/thumb1.jpg' %}" alt="3D Card one" />
+            </div>
+            <h2>Video Title</h2>
+            <p>Premium UI design ready for any modern project.</p>
+            <button onclick="openModal()">Download</button>
+          </div>
+          <div class="card">
+            <div class="thumbnail">
+              <img src="{% static 'thumbnail/thumb3.jpg' %}" alt="3D Card three" />
+            </div>
+            <h2>Video Title</h2>
+            <p>Premium UI design ready for any modern project.</p>
+            <button onclick="openModal()">Download</button>
+          </div>
+        </div>
+      </main>
+
+      {% comment %}sign up model start{% endcomment %}
+      <!-- Modal -->
+      <div id="signupModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>Create Account</h2>
+          <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <input type="password" name="password2" placeholder="Confirm Password" required />
+            <button type="submit">Sign Up</button>
+          </form>
+          {% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+        </div>
+      </div>
+    </section>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
